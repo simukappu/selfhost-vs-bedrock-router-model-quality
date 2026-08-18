@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "properties": {
+    "intent": {
+      "type": "string",
+      "enum": [
+        "UC14_SEARCH",
+        "UC14_NEEDS_CLARIFICATION",
+        "UC2_PRODUCT_DETAIL",
+        "UC3_FAQ",
+        "UC3_ORDER_QUERY",
+        "UC3_ORDER_ACTION",
+        "UC5_OTHER"
+      ]
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "product_search",
+              "get_product_details",
+              "check_inventory",
+              "get_reviews",
+              "get_order_status",
+              "list_orders",
+              "get_order_details",
+              "cancel_order",
+              "return_order",
+              "modify_order",
+              "get_payment_info",
+              "get_point_balance",
+              "recommend_api"
+            ]
+          },
+          "args": {
+            "type": "object",
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 3
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean",
+                      "null"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "name",
+          "args"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "intent",
+    "tools"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,25 @@
+{
+  "backend": "vllm (OpenAI-compatible, guided JSON)",
+  "endpoint": "self-hosted Qwen3.5-4B on a single GPU",
+  "system_prompt_chars": 1784,
+  "n_scenarios": 200,
+  "provenance": "Produced by the original verification run (Qwen3.5-4B on vLLM, guided JSON decoding, thinking disabled), on the same 200 scenarios and the same system prompt as the managed and Luna runs in this repo. Summary carried over from that run; not re-executed by bench/bench_vllm.py here. bench/bench_vllm.py reproduces this measurement against any vLLM endpoint. Latency is a self-hosted GPU at a different time and is not comparable to the Bedrock latencies as a serving benchmark.",
+  "results": {
+    "qwen3.5-4b": {
+      "model": "Qwen/Qwen3.5-4B",
+      "n": 200,
+      "errors": 0,
+      "json_ok": 200,
+      "schema_ok": 200,
+      "intent_correct": 181,
+      "tools_match": 171,
+      "arg_accuracy": 0.4899,
+      "in_tok_median": 706,
+      "out_tok_median": 62,
+      "latency_p50": 2233.25,
+      "latency_p90": 4653.04,
+      "latency_mean": 2370.9,
+      "note": "Served with guided JSON decoding, so schema_ok is 200/200 by construction; the managed backends are prompt-only, which favors Qwen on tools_match. arg_accuracy is the coarse key-presence measure defined in bench_vllm.py."
+    }
+  }
+}

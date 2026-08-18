@@ -1,0 +1,3409 @@
+{
+  "backend": "bedrock-mantle (Responses API)",
+  "region": "us-east-1",
+  "endpoint": "https://bedrock-mantle.us-east-1.api.aws/openai/v1",
+  "system_prompt_chars": 1784,
+  "n_scenarios": 200,
+  "results": {
+    "gpt-5.6-luna": {
+      "model": "openai.gpt-5.6-luna",
+      "n": 200,
+      "errors": 0,
+      "json_ok": 200,
+      "schema_ok": 200,
+      "intent_correct": 186,
+      "tools_match": 179,
+      "in_tok_median": 745.0,
+      "out_tok_median": 78.0,
+      "latency_p50": 1008.75,
+      "latency_p90": 2192.7,
+      "per_intent": {
+        "uc14_search": {
+          "n": 56,
+          "intent_correct": 52,
+          "tools_match": 55
+        },
+        "uc14_needs_clarification": {
+          "n": 17,
+          "intent_correct": 17,
+          "tools_match": 17
+        },
+        "uc2_product_detail": {
+          "n": 48,
+          "intent_correct": 46,
+          "tools_match": 38
+        },
+        "uc3_faq": {
+          "n": 25,
+          "intent_correct": 21,
+          "tools_match": 21
+        },
+        "uc3_order_query": {
+          "n": 16,
+          "intent_correct": 13,
+          "tools_match": 13
+        },
+        "uc3_order_action": {
+          "n": 14,
+          "intent_correct": 14,
+          "tools_match": 12
+        },
+        "uc5_other": {
+          "n": 24,
+          "intent_correct": 23,
+          "tools_match": 23
+        }
+      },
+      "records": [
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-category-1word-001",
+          "source": "uc14_search",
+          "latency_ms": 2208.4,
+          "in_tok": 739,
+          "out_tok": 188
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-category-1word-002",
+          "source": "uc14_search",
+          "latency_ms": 2135.2,
+          "in_tok": 739,
+          "out_tok": 157
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": false,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-category-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 2151.8,
+          "in_tok": 741,
+          "out_tok": 191
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-category-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 2048.3,
+          "in_tok": 741,
+          "out_tok": 160
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-color-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 2420.2,
+          "in_tok": 744,
+          "out_tok": 171
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-color-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 2383.1,
+          "in_tok": 742,
+          "out_tok": 189
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-size-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 2046.9,
+          "in_tok": 741,
+          "out_tok": 163
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-feature-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 2750.0,
+          "in_tok": 742,
+          "out_tok": 252
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-feature-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1557.1,
+          "in_tok": 742,
+          "out_tok": 175
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-price-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1189.0,
+          "in_tok": 744,
+          "out_tok": 114
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-price-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1497.8,
+          "in_tok": 743,
+          "out_tok": 182
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-gender-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1612.9,
+          "in_tok": 741,
+          "out_tok": 181
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-gender-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1592.8,
+          "in_tok": 740,
+          "out_tok": 193
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-brand-1word-001",
+          "source": "uc14_search",
+          "latency_ms": 1481.4,
+          "in_tok": 740,
+          "out_tok": 171
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": false,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-brand-1word-002",
+          "source": "uc14_search",
+          "latency_ms": 1714.1,
+          "in_tok": 738,
+          "out_tok": 221
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-brand-category-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1801.3,
+          "in_tok": 744,
+          "out_tok": 218
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-brand-category-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1341.7,
+          "in_tok": 741,
+          "out_tok": 176
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-purpose-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1978.9,
+          "in_tok": 743,
+          "out_tok": 273
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-scene-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 2003.2,
+          "in_tok": 744,
+          "out_tok": 242
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-scene-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1606.0,
+          "in_tok": 744,
+          "out_tok": 219
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-persona-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 2192.7,
+          "in_tok": 743,
+          "out_tok": 287
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-popularity-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 2439.8,
+          "in_tok": 743,
+          "out_tok": 300
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-sale-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1486.6,
+          "in_tok": 741,
+          "out_tok": 163
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "check_inventory"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-inventory-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 5995.2,
+          "in_tok": 743,
+          "out_tok": 248
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-multi-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1368.5,
+          "in_tok": 747,
+          "out_tok": 124
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-multi-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1958.4,
+          "in_tok": 748,
+          "out_tok": 266
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-multi-natural-003",
+          "source": "uc14_search",
+          "latency_ms": 1598.9,
+          "in_tok": 750,
+          "out_tok": 218
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-keyword-half-001",
+          "source": "uc14_search",
+          "latency_ms": 1392.5,
+          "in_tok": 741,
+          "out_tok": 174
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-keyword-half-002",
+          "source": "uc14_search",
+          "latency_ms": 2285.0,
+          "in_tok": 742,
+          "out_tok": 259
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-keyword-full-001",
+          "source": "uc14_search",
+          "latency_ms": 1482.1,
+          "in_tok": 744,
+          "out_tok": 192
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-negation-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1811.5,
+          "in_tok": 746,
+          "out_tok": 220
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-srp-refine-001",
+          "source": "uc14_search",
+          "latency_ms": 1732.2,
+          "in_tok": 755,
+          "out_tok": 201
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-srp-sort-001",
+          "source": "uc14_search",
+          "latency_ms": 1376.3,
+          "in_tok": 755,
+          "out_tok": 175
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-srp-refine-002",
+          "source": "uc14_search",
+          "latency_ms": 1246.0,
+          "in_tok": 755,
+          "out_tok": 109
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-history-cheaper-001",
+          "source": "uc14_search",
+          "latency_ms": 1742.0,
+          "in_tok": 816,
+          "out_tok": 196
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": false,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-history-color-001",
+          "source": "uc14_search",
+          "latency_ms": 4054.0,
+          "in_tok": 799,
+          "out_tok": 513
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-history-brand-001",
+          "source": "uc14_search",
+          "latency_ms": 2738.8,
+          "in_tok": 807,
+          "out_tok": 307
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-material-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1564.4,
+          "in_tok": 743,
+          "out_tok": 203
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-material-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1463.1,
+          "in_tok": 749,
+          "out_tok": 209
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-material-natural-003",
+          "source": "uc14_search",
+          "latency_ms": 1568.0,
+          "in_tok": 744,
+          "out_tok": 206
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-material-natural-004",
+          "source": "uc14_search",
+          "latency_ms": 1961.1,
+          "in_tok": 743,
+          "out_tok": 242
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-comparison-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 2059.1,
+          "in_tok": 750,
+          "out_tok": 285
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-comparison-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1881.6,
+          "in_tok": 745,
+          "out_tok": 212
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-season-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1598.7,
+          "in_tok": 742,
+          "out_tok": 198
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-season-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1647.9,
+          "in_tok": 747,
+          "out_tok": 226
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-event-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1622.1,
+          "in_tok": 753,
+          "out_tok": 208
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-event-natural-002",
+          "source": "uc14_search",
+          "latency_ms": 1602.6,
+          "in_tok": 748,
+          "out_tok": 228
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": false,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-style-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1684.3,
+          "in_tok": 745,
+          "out_tok": 213
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-bodyshape-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 1641.6,
+          "in_tok": 750,
+          "out_tok": 221
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-multipurpose-natural-001",
+          "source": "uc14_search",
+          "latency_ms": 2604.0,
+          "in_tok": 748,
+          "out_tok": 364
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-srp-size-only-001",
+          "source": "uc14_search",
+          "latency_ms": 1282.7,
+          "in_tok": 750,
+          "out_tok": 162
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-srp-multi-refine-001",
+          "source": "uc14_search",
+          "latency_ms": 1370.9,
+          "in_tok": 755,
+          "out_tok": 184
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-srp-price-range-001",
+          "source": "uc14_search",
+          "latency_ms": 1782.5,
+          "in_tok": 762,
+          "out_tok": 171
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-srp-newest-001",
+          "source": "uc14_search",
+          "latency_ms": 1340.6,
+          "in_tok": 752,
+          "out_tok": 190
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-brand-miss-001",
+          "source": "uc14_search",
+          "latency_ms": 1467.3,
+          "in_tok": 744,
+          "out_tok": 189
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14SEARCH-brand-miss-002",
+          "source": "uc14_search",
+          "latency_ms": 1926.6,
+          "in_tok": 744,
+          "out_tok": 250
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "recommend_api"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-zero-natural-001",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 618.9,
+          "in_tok": 740,
+          "out_tok": 30
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "recommend_api"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-zero-natural-002",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 770.6,
+          "in_tok": 744,
+          "out_tok": 51
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "recommend_api"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-zero-natural-003",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 743.2,
+          "in_tok": 742,
+          "out_tok": 44
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "recommend_api"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-zero-natural-004",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 832.8,
+          "in_tok": 741,
+          "out_tok": 50
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-gift-natural-001",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 1651.2,
+          "in_tok": 746,
+          "out_tok": 224
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-gift-natural-002",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 1705.8,
+          "in_tok": 752,
+          "out_tok": 218
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-gift-natural-003",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 1303.2,
+          "in_tok": 746,
+          "out_tok": 198
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-gift-natural-004",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 1582.4,
+          "in_tok": 749,
+          "out_tok": 194
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-preference-natural-001",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 2299.9,
+          "in_tok": 747,
+          "out_tok": 324
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-preference-natural-002",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 1601.4,
+          "in_tok": 746,
+          "out_tok": 212
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-competitor-natural-001",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 1771.6,
+          "in_tok": 743,
+          "out_tok": 237
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-competitor-natural-002",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 1768.3,
+          "in_tok": 747,
+          "out_tok": 262
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-life-event-natural-001",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 2205.7,
+          "in_tok": 752,
+          "out_tok": 325
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-life-event-natural-002",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 2501.2,
+          "in_tok": 747,
+          "out_tok": 284
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-style-natural-001",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 2208.4,
+          "in_tok": 748,
+          "out_tok": 275
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-style-natural-002",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 1500.1,
+          "in_tok": 745,
+          "out_tok": 203
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": true,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC14NC-style-natural-003",
+          "source": "uc14_needs_clarification",
+          "latency_ms": 1799.4,
+          "in_tok": 752,
+          "out_tok": 261
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-attribute-pronoun-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 721.1,
+          "in_tok": 755,
+          "out_tok": 55
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-attribute-pronoun-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 664.1,
+          "in_tok": 755,
+          "out_tok": 31
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-attribute-short-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 828.6,
+          "in_tok": 751,
+          "out_tok": 55
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-attribute-short-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 811.7,
+          "in_tok": 751,
+          "out_tok": 57
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-attribute-short-003",
+          "source": "uc2_product_detail",
+          "latency_ms": 824.8,
+          "in_tok": 750,
+          "out_tok": 57
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-attribute-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 840.1,
+          "in_tok": 755,
+          "out_tok": 58
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-attribute-short-ctx-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 824.7,
+          "in_tok": 751,
+          "out_tok": 55
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "get_reviews"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-size-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 796.7,
+          "in_tok": 752,
+          "out_tok": 55
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-size-pronoun-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 810.9,
+          "in_tok": 755,
+          "out_tok": 55
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "check_inventory"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-size-short-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 1449.1,
+          "in_tok": 749,
+          "out_tok": 54
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-size-short-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 820.5,
+          "in_tok": 750,
+          "out_tok": 55
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-size-natural-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 852.8,
+          "in_tok": 756,
+          "out_tok": 71
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-size-natural-003",
+          "source": "uc2_product_detail",
+          "latency_ms": 865.8,
+          "in_tok": 752,
+          "out_tok": 64
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-size-natural-ctx-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 837.7,
+          "in_tok": 752,
+          "out_tok": 63
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "get_product_details"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-size-short-ctx-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 957.2,
+          "in_tok": 751,
+          "out_tok": 71
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-stock-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 1021.3,
+          "in_tok": 755,
+          "out_tok": 68
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-stock-natural-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 822.4,
+          "in_tok": 752,
+          "out_tok": 52
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-stock-short-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 791.9,
+          "in_tok": 750,
+          "out_tok": 59
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-stock-pronoun-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 988.9,
+          "in_tok": 754,
+          "out_tok": 76
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-stock-short-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 778.9,
+          "in_tok": 754,
+          "out_tok": 61
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-stock-natural-ctx-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 733.7,
+          "in_tok": 752,
+          "out_tok": 46
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_reviews"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-review-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 846.2,
+          "in_tok": 752,
+          "out_tok": 49
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_reviews"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-review-short-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 781.2,
+          "in_tok": 752,
+          "out_tok": 50
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_reviews"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-review-short-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 781.3,
+          "in_tok": 750,
+          "out_tok": 56
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_reviews"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-review-natural-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 1114.3,
+          "in_tok": 757,
+          "out_tok": 54
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_reviews"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-review-natural-003",
+          "source": "uc2_product_detail",
+          "latency_ms": 923.1,
+          "in_tok": 753,
+          "out_tok": 50
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-variation-short-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 797.3,
+          "in_tok": 751,
+          "out_tok": 65
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "get_product_details"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-variation-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 1014.8,
+          "in_tok": 753,
+          "out_tok": 81
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "get_product_details"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-variation-natural-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 876.5,
+          "in_tok": 753,
+          "out_tok": 72
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "check_inventory"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-variation-natural-ctx-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 1047.8,
+          "in_tok": 753,
+          "out_tok": 100
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-care-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 703.7,
+          "in_tok": 757,
+          "out_tok": 55
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-care-noun-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 739.2,
+          "in_tok": 752,
+          "out_tok": 55
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-care-natural-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 776.0,
+          "in_tok": 755,
+          "out_tok": 53
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-spec-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 777.3,
+          "in_tok": 755,
+          "out_tok": 49
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-spec-short-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 816.1,
+          "in_tok": 751,
+          "out_tok": 57
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-spec-pronoun-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 908.9,
+          "in_tok": 759,
+          "out_tok": 56
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-price-short-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 761.4,
+          "in_tok": 752,
+          "out_tok": 55
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-price-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 741.5,
+          "in_tok": 753,
+          "out_tok": 56
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-price-natural-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 864.8,
+          "in_tok": 752,
+          "out_tok": 65
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-price-natural-ctx-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 837.4,
+          "in_tok": 752,
+          "out_tok": 65
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory",
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-multi-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 909.3,
+          "in_tok": 755,
+          "out_tok": 91
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-multi-noun-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 701.1,
+          "in_tok": 756,
+          "out_tok": 57
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "product_search"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-srp-ordinal-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 1493.4,
+          "in_tok": 759,
+          "out_tok": 158
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": false,
+          "tool_names": [],
+          "tools_match": false,
+          "missing_tools": [
+            "get_product_details",
+            "product_search"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-srp-ordinal-002",
+          "source": "uc2_product_detail",
+          "latency_ms": 3001.4,
+          "in_tok": 755,
+          "out_tok": 363
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_SEARCH",
+          "intent_correct": false,
+          "tool_names": [
+            "product_search"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "get_reviews"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-srp-ordinal-003",
+          "source": "uc2_product_detail",
+          "latency_ms": 3416.0,
+          "in_tok": 756,
+          "out_tok": 466
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "check_inventory",
+            "get_reviews",
+            "product_search"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-srp-ordinal-004",
+          "source": "uc2_product_detail",
+          "latency_ms": 2064.0,
+          "in_tok": 753,
+          "out_tok": 216
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-id-ref-noun-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 893.4,
+          "in_tok": 799,
+          "out_tok": 61
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": true,
+          "tool_names": [
+            "check_inventory"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC2-id-ref-natural-001",
+          "source": "uc2_product_detail",
+          "latency_ms": 854.9,
+          "in_tok": 794,
+          "out_tok": 60
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-return-1word-001",
+          "source": "uc3_faq",
+          "latency_ms": 491.4,
+          "in_tok": 738,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-return-policy-natural-001",
+          "source": "uc3_faq",
+          "latency_ms": 581.8,
+          "in_tok": 741,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": false,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": false,
+          "missing_tools": [],
+          "extra_disallowed": [
+            "list_orders"
+          ],
+          "scenario_id": "UC3FAQ-return-policy-natural-002",
+          "source": "uc3_faq",
+          "latency_ms": 1267.1,
+          "in_tok": 740,
+          "out_tok": 116
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-return-policy-natural-003",
+          "source": "uc3_faq",
+          "latency_ms": 554.3,
+          "in_tok": 743,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-return-policy-pdp-001",
+          "source": "uc3_faq",
+          "latency_ms": 1037.1,
+          "in_tok": 754,
+          "out_tok": 82
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-return-policy-pdp-002",
+          "source": "uc3_faq",
+          "latency_ms": 803.4,
+          "in_tok": 753,
+          "out_tok": 54
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-return-negative-001",
+          "source": "uc3_faq",
+          "latency_ms": 564.6,
+          "in_tok": 744,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-return-deadline-001",
+          "source": "uc3_faq",
+          "latency_ms": 545.8,
+          "in_tok": 744,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-shipping-1word-001",
+          "source": "uc3_faq",
+          "latency_ms": 524.9,
+          "in_tok": 738,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-shipping-policy-natural-001",
+          "source": "uc3_faq",
+          "latency_ms": 578.0,
+          "in_tok": 744,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-shipping-policy-natural-002",
+          "source": "uc3_faq",
+          "latency_ms": 542.9,
+          "in_tok": 748,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-shipping-policy-natural-003",
+          "source": "uc3_faq",
+          "latency_ms": 547.0,
+          "in_tok": 741,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-shipping-policy-short-001",
+          "source": "uc3_faq",
+          "latency_ms": 544.4,
+          "in_tok": 740,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-payment-policy-natural-001",
+          "source": "uc3_faq",
+          "latency_ms": 542.8,
+          "in_tok": 745,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-payment-policy-natural-002",
+          "source": "uc3_faq",
+          "latency_ms": 840.1,
+          "in_tok": 743,
+          "out_tok": 42
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-exchange-policy-natural-001",
+          "source": "uc3_faq",
+          "latency_ms": 725.6,
+          "in_tok": 741,
+          "out_tok": 33
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": false,
+          "tool_names": [
+            "modify_order"
+          ],
+          "tools_match": false,
+          "missing_tools": [],
+          "extra_disallowed": [
+            "modify_order"
+          ],
+          "scenario_id": "UC3FAQ-exchange-policy-natural-002",
+          "source": "uc3_faq",
+          "latency_ms": 2797.6,
+          "in_tok": 743,
+          "out_tok": 333
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-exchange-policy-pdp-001",
+          "source": "uc3_faq",
+          "latency_ms": 992.8,
+          "in_tok": 755,
+          "out_tok": 80
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-coupon-1word-001",
+          "source": "uc3_faq",
+          "latency_ms": 1226.2,
+          "in_tok": 739,
+          "out_tok": 98
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-points-policy-natural-001",
+          "source": "uc3_faq",
+          "latency_ms": 546.4,
+          "in_tok": 746,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-coupon-policy-natural-001",
+          "source": "uc3_faq",
+          "latency_ms": 661.3,
+          "in_tok": 746,
+          "out_tok": 32
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": false,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": false,
+          "missing_tools": [],
+          "extra_disallowed": [
+            "list_orders"
+          ],
+          "scenario_id": "UC3FAQ-cancel-1word-001",
+          "source": "uc3_faq",
+          "latency_ms": 1121.7,
+          "in_tok": 739,
+          "out_tok": 97
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-cancel-policy-natural-001",
+          "source": "uc3_faq",
+          "latency_ms": 1288.5,
+          "in_tok": 742,
+          "out_tok": 115
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3FAQ-cancel-policy-natural-002",
+          "source": "uc3_faq",
+          "latency_ms": 895.1,
+          "in_tok": 744,
+          "out_tok": 46
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC2_PRODUCT_DETAIL",
+          "intent_correct": false,
+          "tool_names": [
+            "get_product_details"
+          ],
+          "tools_match": false,
+          "missing_tools": [],
+          "extra_disallowed": [
+            "get_product_details"
+          ],
+          "scenario_id": "UC3FAQ-gift-policy-natural-001",
+          "source": "uc3_faq",
+          "latency_ms": 837.6,
+          "in_tok": 754,
+          "out_tok": 61
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-shipping-natural-001",
+          "source": "uc3_order_query",
+          "latency_ms": 758.5,
+          "in_tok": 742,
+          "out_tok": 49
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-shipping-natural-002",
+          "source": "uc3_order_query",
+          "latency_ms": 999.4,
+          "in_tok": 745,
+          "out_tok": 81
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-shipping-natural-003",
+          "source": "uc3_order_query",
+          "latency_ms": 1315.1,
+          "in_tok": 742,
+          "out_tok": 125
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": false,
+          "tool_names": [],
+          "tools_match": false,
+          "missing_tools": [
+            "list_orders"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-shipping-short-001",
+          "source": "uc3_order_query",
+          "latency_ms": 931.8,
+          "in_tok": 741,
+          "out_tok": 57
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-shipping-time-ref-001",
+          "source": "uc3_order_query",
+          "latency_ms": 1069.5,
+          "in_tok": 746,
+          "out_tok": 75
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-shipping-1word-001",
+          "source": "uc3_order_query",
+          "latency_ms": 771.0,
+          "in_tok": 740,
+          "out_tok": 57
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-history-natural-001",
+          "source": "uc3_order_query",
+          "latency_ms": 693.7,
+          "in_tok": 743,
+          "out_tok": 43
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-history-natural-002",
+          "source": "uc3_order_query",
+          "latency_ms": 742.8,
+          "in_tok": 742,
+          "out_tok": 43
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-history-time-ref-001",
+          "source": "uc3_order_query",
+          "latency_ms": 843.2,
+          "in_tok": 745,
+          "out_tok": 67
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "get_order_details"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-detail-id-001",
+          "source": "uc3_order_query",
+          "latency_ms": 728.5,
+          "in_tok": 748,
+          "out_tok": 50
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "get_order_details"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-detail-pronoun-001",
+          "source": "uc3_order_query",
+          "latency_ms": 1139.4,
+          "in_tok": 744,
+          "out_tok": 120
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": false,
+          "tool_names": [],
+          "tools_match": false,
+          "missing_tools": [
+            "get_point_balance"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-points-natural-001",
+          "source": "uc3_order_query",
+          "latency_ms": 543.9,
+          "in_tok": 743,
+          "out_tok": 15
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "get_point_balance"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-points-natural-002",
+          "source": "uc3_order_query",
+          "latency_ms": 835.0,
+          "in_tok": 741,
+          "out_tok": 65
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_QUERY",
+          "intent_correct": true,
+          "tool_names": [
+            "get_point_balance"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-points-natural-003",
+          "source": "uc3_order_query",
+          "latency_ms": 1002.7,
+          "in_tok": 744,
+          "out_tok": 84
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": false,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-coupon-natural-001",
+          "source": "uc3_order_query",
+          "latency_ms": 1322.8,
+          "in_tok": 745,
+          "out_tok": 120
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_FAQ",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OQ-coupon-natural-002",
+          "source": "uc3_order_query",
+          "latency_ms": 746.3,
+          "in_tok": 745,
+          "out_tok": 44
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-cancel-natural-001",
+          "source": "uc3_order_action",
+          "latency_ms": 1397.8,
+          "in_tok": 741,
+          "out_tok": 116
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-cancel-imperative-001",
+          "source": "uc3_order_action",
+          "latency_ms": 1077.8,
+          "in_tok": 740,
+          "out_tok": 92
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "cancel_order"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-cancel-pronoun-001",
+          "source": "uc3_order_action",
+          "latency_ms": 1148.5,
+          "in_tok": 811,
+          "out_tok": 103
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-cancel-time-ref-001",
+          "source": "uc3_order_action",
+          "latency_ms": 881.1,
+          "in_tok": 745,
+          "out_tok": 65
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "cancel_order"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-cancel-id-001",
+          "source": "uc3_order_action",
+          "latency_ms": 747.3,
+          "in_tok": 745,
+          "out_tok": 43
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "cancel_order"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-cancel-1word-001",
+          "source": "uc3_order_action",
+          "latency_ms": 736.8,
+          "in_tok": 793,
+          "out_tok": 48
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-address-natural-001",
+          "source": "uc3_order_action",
+          "latency_ms": 1645.5,
+          "in_tok": 743,
+          "out_tok": 163
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "modify_order"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "list_orders"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-address-imperative-001",
+          "source": "uc3_order_action",
+          "latency_ms": 2412.3,
+          "in_tok": 741,
+          "out_tok": 270
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-address-keyword-001",
+          "source": "uc3_order_action",
+          "latency_ms": 2289.7,
+          "in_tok": 740,
+          "out_tok": 231
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-delivery-date-natural-001",
+          "source": "uc3_order_action",
+          "latency_ms": 1279.0,
+          "in_tok": 743,
+          "out_tok": 127
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "modify_order"
+          ],
+          "tools_match": false,
+          "missing_tools": [
+            "list_orders"
+          ],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-delivery-date-specific-001",
+          "source": "uc3_order_action",
+          "latency_ms": 1815.4,
+          "in_tok": 744,
+          "out_tok": 210
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-quantity-natural-001",
+          "source": "uc3_order_action",
+          "latency_ms": 1111.2,
+          "in_tok": 743,
+          "out_tok": 101
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "modify_order"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-quantity-add-001",
+          "source": "uc3_order_action",
+          "latency_ms": 1951.9,
+          "in_tok": 806,
+          "out_tok": 232
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC3_ORDER_ACTION",
+          "intent_correct": true,
+          "tool_names": [
+            "list_orders"
+          ],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC3OA-gift-natural-001",
+          "source": "uc3_order_action",
+          "latency_ms": 2119.1,
+          "in_tok": 743,
+          "out_tok": 238
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-greeting-natural-001",
+          "source": "uc5_other",
+          "latency_ms": 541.7,
+          "in_tok": 738,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-greeting-natural-002",
+          "source": "uc5_other",
+          "latency_ms": 538.2,
+          "in_tok": 740,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-greeting-natural-003",
+          "source": "uc5_other",
+          "latency_ms": 513.2,
+          "in_tok": 738,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-greeting-short-001",
+          "source": "uc5_other",
+          "latency_ms": 547.7,
+          "in_tok": 739,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-greeting-short-002",
+          "source": "uc5_other",
+          "latency_ms": 729.9,
+          "in_tok": 739,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-greeting-short-003",
+          "source": "uc5_other",
+          "latency_ms": 505.5,
+          "in_tok": 739,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-greeting-natural-srp-001",
+          "source": "uc5_other",
+          "latency_ms": 790.7,
+          "in_tok": 749,
+          "out_tok": 54
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-greeting-natural-pdp-001",
+          "source": "uc5_other",
+          "latency_ms": 747.1,
+          "in_tok": 750,
+          "out_tok": 30
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-capability-natural-001",
+          "source": "uc5_other",
+          "latency_ms": 571.2,
+          "in_tok": 743,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-capability-natural-002",
+          "source": "uc5_other",
+          "latency_ms": 838.6,
+          "in_tok": 747,
+          "out_tok": 43
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-capability-natural-003",
+          "source": "uc5_other",
+          "latency_ms": 535.2,
+          "in_tok": 746,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-out-of-scope-natural-001",
+          "source": "uc5_other",
+          "latency_ms": 689.4,
+          "in_tok": 742,
+          "out_tok": 31
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-out-of-scope-natural-002",
+          "source": "uc5_other",
+          "latency_ms": 500.5,
+          "in_tok": 741,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-out-of-scope-natural-003",
+          "source": "uc5_other",
+          "latency_ms": 732.7,
+          "in_tok": 741,
+          "out_tok": 31
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-meta-natural-001",
+          "source": "uc5_other",
+          "latency_ms": 564.7,
+          "in_tok": 739,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-meta-natural-002",
+          "source": "uc5_other",
+          "latency_ms": 533.9,
+          "in_tok": 739,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-inappropriate-natural-001",
+          "source": "uc5_other",
+          "latency_ms": 1199.7,
+          "in_tok": 741,
+          "out_tok": 85
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-inappropriate-natural-002",
+          "source": "uc5_other",
+          "latency_ms": 520.9,
+          "in_tok": 746,
+          "out_tok": 14
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-departure-natural-001",
+          "source": "uc5_other",
+          "latency_ms": 718.5,
+          "in_tok": 741,
+          "out_tok": 31
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-departure-short-001",
+          "source": "uc5_other",
+          "latency_ms": 656.0,
+          "in_tok": 740,
+          "out_tok": 30
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC14_NEEDS_CLARIFICATION",
+          "intent_correct": false,
+          "tool_names": [
+            "recommend_api"
+          ],
+          "tools_match": false,
+          "missing_tools": [],
+          "extra_disallowed": [
+            "recommend_api"
+          ],
+          "scenario_id": "UC5-resume-natural-001",
+          "source": "uc5_other",
+          "latency_ms": 849.6,
+          "in_tok": 743,
+          "out_tok": 58
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-resume-natural-002",
+          "source": "uc5_other",
+          "latency_ms": 813.8,
+          "in_tok": 742,
+          "out_tok": 44
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-anomaly-gibberish-001",
+          "source": "uc5_other",
+          "latency_ms": 746.6,
+          "in_tok": 740,
+          "out_tok": 39
+        },
+        {
+          "json_ok": true,
+          "schema_ok": true,
+          "intent": "UC5_OTHER",
+          "intent_correct": true,
+          "tool_names": [],
+          "tools_match": true,
+          "missing_tools": [],
+          "extra_disallowed": [],
+          "scenario_id": "UC5-anomaly-emoji-001",
+          "source": "uc5_other",
+          "latency_ms": 713.6,
+          "in_tok": 738,
+          "out_tok": 33
+        }
+      ]
+    }
+  }
+}

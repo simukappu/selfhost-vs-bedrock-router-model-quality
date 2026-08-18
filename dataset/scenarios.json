@@ -1,0 +1,4953 @@
+[
+  {
+    "scenario_id": "UC14SEARCH-category-1word-001",
+    "input": "スニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ単語1つの検索。条件1つあるためSEARCH扱い。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-category-1word-002",
+    "input": "ジャケット",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ単語1つの検索。商品カテゴリが明示されているためSEARCH扱い。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-category-natural-001",
+    "input": "スニーカー探して",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "「探して」明示の検索要求。カテゴリ指定でproduct_search実行。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-category-natural-002",
+    "input": "シャツ見せて",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "「見せて」命令形での検索要求。シャツのカテゴリ検索を実行。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "シャツ"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-color-natural-001",
+    "input": "黒のスニーカー探して",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + 色属性の絞り込み検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー 黒",
+            "filters": {
+              "color": "ブラック"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-color-natural-002",
+    "input": "白いシャツない？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "「ない？」疑問形での在庫確認だが、商品カテゴリ + 色での検索意図。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "シャツ 白",
+            "filters": {
+              "color": "ホワイト"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-size-natural-001",
+    "input": "Lサイズのジャケット",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + サイズ属性の絞り込み検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット",
+            "filters": {
+              "size": "L"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-feature-natural-001",
+    "input": "防水のスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "機能特性「防水」+ カテゴリの検索。capable_of で意味的に紐づける。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー 防水",
+            "capable_of": [
+              "防水"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-feature-natural-002",
+    "input": "軽量のジャケット",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "機能特性「軽量」+ カテゴリの検索。capable_of で意味的に紐づける。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット 軽量",
+            "capable_of": [
+              "軽量"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-price-natural-001",
+    "input": "3万円以下のスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + 価格上限の絞り込み検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー",
+            "filters": {
+              "price_max": 30000
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-price-natural-002",
+    "input": "1万円台のシャツ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + 価格帯(10000-19999円)の絞り込み検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "シャツ",
+            "filters": {
+              "price_min": 10000,
+              "price_max": 19999
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-gender-natural-001",
+    "input": "メンズのスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + 性別ターゲットの絞り込み検索。genderは標準taxonomyのためfilter。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー メンズ",
+            "filters": {
+              "gender": "メンズ"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-gender-natural-002",
+    "input": "レディースのジャケット",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + 性別ターゲットの絞り込み検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット レディース",
+            "filters": {
+              "gender": "レディース"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-brand-1word-001",
+    "input": "AnyBrand-1",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "実在ブランド単独。search API側がbrand catalogで照合、念のためkeywordsにも含める。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "AnyBrand-1"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-brand-1word-002",
+    "input": "Hoka",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "DB未登録ブランド。filterに入れず、keywordsと意味タグ(is_a/capable_of等)でスタイル属性を表現してベクトル検索でフォールバック。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "Hoka ランニング クッション",
+            "used_for_function": [
+              "ランニング"
+            ],
+            "capable_of": [
+              "軽量",
+              "クッション性"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-brand-category-natural-001",
+    "input": "AnyBrand-2のスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "実在ブランド + カテゴリ。search API側がbrand catalogで照合。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー AnyBrand-2"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-brand-category-natural-002",
+    "input": "Nikeのスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "DB未登録ブランド + カテゴリ。filterに入れず、keywordsで全文検索フォールバック。スポーツ系スタイルとして意味的にも検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー Nike スポーツ",
+            "is_a": [
+              "スポーティ"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-purpose-natural-001",
+    "input": "ランニング用の靴",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "用途指定による検索。used_for_functionで意味的に紐づける。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "靴 ランニング",
+            "used_for_function": [
+              "ランニング"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-scene-natural-001",
+    "input": "夏のキャンプに使える服",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "シーン (used_for_event) + 季節 (used_on) + 場所 (used_in_loc) + カテゴリ「服」の意味検索。カテゴリ「服」は抽象的だが具体属性が複数あるためSEARCH扱い。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "服 夏 キャンプ アウトドア",
+            "used_for_event": [
+              "キャンプ"
+            ],
+            "used_on": [
+              "夏"
+            ],
+            "used_in_loc": [
+              "アウトドア"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-scene-natural-002",
+    "input": "入学式に着るスーツ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "シーン (used_for_event) + カテゴリ「スーツ」明示。is_a: formalとしてフォーマルスタイルも追加。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スーツ 入学式 フォーマル",
+            "used_for_event": [
+              "入学式"
+            ],
+            "is_a": [
+              "フォーマル"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-persona-natural-001",
+    "input": "子供用のスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + 対象 (子供)。子供向けは構造化フィルタではなく used_for_audience の意味タグで連想的に検索する。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー 子供",
+            "used_for_audience": [
+              "子供"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-popularity-natural-001",
+    "input": "レビュー高いスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + 評価ソート条件の検索。レビュースコア降順で取得。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー",
+            "sort": "rating_desc"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-sale-natural-001",
+    "input": "セール中の服",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + セール条件の絞り込み検索。on_saleはfilter。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "服",
+            "filters": {
+              "on_sale": true
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-inventory-natural-001",
+    "input": "明日届くスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "「明日届く」は在庫確認の意図。まずスニーカーをproduct_searchし、上位商品の在庫をcheck_inventoryで確認する複合フロー。product_id は実行時の検索結果で解決される(ドラフトは代表値)。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー"
+          }
+        },
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-001"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-multi-natural-001",
+    "input": "黒の防水スニーカー3万以下",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "色 (filter) + 機能 (capable_of) + 価格 (filter) の複合条件検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー 防水 黒",
+            "filters": {
+              "color": "ブラック",
+              "price_max": 30000
+            },
+            "capable_of": [
+              "防水"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-multi-natural-002",
+    "input": "AnyBrand-3のランニング用で軽いの",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "実在ブランド (keywords経由でsearch API照合) + 用途 (used_for_function) + 機能 (capable_of) の複合検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ランニング 軽量 AnyBrand-3",
+            "used_for_function": [
+              "ランニング"
+            ],
+            "capable_of": [
+              "軽量"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-multi-natural-003",
+    "input": "冬用の暖かいダウンジャケット3万以下",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "カテゴリ + 季節 (used_on) + 機能 (capable_of=暖かい) + 価格 (filter) の複合条件検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ダウンジャケット 冬 暖かい",
+            "filters": {
+              "price_max": 30000
+            },
+            "used_on": [
+              "冬"
+            ],
+            "capable_of": [
+              "暖かい"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-keyword-half-001",
+    "input": "スニーカー 黒",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "半角空白区切りのキーワード羅列。カテゴリ + 色での検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー 黒",
+            "filters": {
+              "color": "ブラック"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-keyword-half-002",
+    "input": "ジャケット 防水 メンズ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "半角空白区切りの3条件キーワード羅列。カテゴリ + 機能(capable_of) + 性別(filter)。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット 防水 メンズ",
+            "filters": {
+              "gender": "メンズ"
+            },
+            "capable_of": [
+              "防水"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-keyword-full-001",
+    "input": "スニーカー　メンズ　黒",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "全角空白区切りのキーワード羅列(モバイル日本語入力で頻出)。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー メンズ 黒",
+            "filters": {
+              "gender": "メンズ",
+              "color": "ブラック"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-negation-natural-001",
+    "input": "AnyBrand-1以外のスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "実在ブランド除外条件付きの検索。brand_excludeフィルタで指定。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー",
+            "filters": {
+              "brand_exclude": [
+                "AnyBrand-1"
+              ]
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-srp-refine-001",
+    "input": "この中で防水のやつ",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"スニーカー\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "SRP滞在中の絞り込み(機能属性追加)。元クエリに防水を追加。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー 防水",
+            "capable_of": [
+              "防水"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-srp-sort-001",
+    "input": "レビュー高い順で並べて",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"ジャケット\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "SRP滞在中の並べ替え。元クエリにレビュー降順ソートを適用。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット",
+            "sort": "rating_desc"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-srp-refine-002",
+    "input": "3万以下に絞って",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"スニーカー\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "SRP滞在中の価格上限絞り込み。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー",
+            "filters": {
+              "price_max": 30000
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-history-cheaper-001",
+    "input": "もう少し安いのある？",
+    "context": "<context>\n{\"page_type\": \"TOP\", \"conversation_history\": [{\"role\": \"user\", \"content\": \"スニーカー探して\"}, {\"role\": \"assistant\", \"content\": \"おすすめ3件: 軽量ランニングシューズ ¥12,800、高反発クッションスニーカー ¥15,400、トレッキングブーツ ¥24,000\"}]}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "会話履歴の前回検索結果(最低価格 ¥12,800)を基準に、それより安い価格帯で再検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー",
+            "filters": {
+              "price_max": 12000
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-history-color-001",
+    "input": "別の色は？",
+    "context": "<context>\n{\"page_type\": \"TOP\", \"conversation_history\": [{\"role\": \"user\", \"content\": \"黒のシャツ探して\"}, {\"role\": \"assistant\", \"content\": \"黒のシャツ3件: コットンシャツ、リネンシャツ、ストレッチシャツ\"}]}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "会話履歴の前回検索条件「黒のシャツ」を基準に、色を変えて再検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "シャツ",
+            "filters": {
+              "color_exclude": [
+                "ブラック"
+              ]
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-history-brand-001",
+    "input": "他のブランドも見たい",
+    "context": "<context>\n{\"page_type\": \"TOP\", \"conversation_history\": [{\"role\": \"user\", \"content\": \"AnyBrand-1のスニーカー\"}, {\"role\": \"assistant\", \"content\": \"AnyBrand-1のスニーカー5件: prod-001、prod-002、prod-003、prod-004、prod-005\"}]}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "会話履歴の前回検索ブランド「AnyBrand-1」以外の同カテゴリ商品を検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー",
+            "filters": {
+              "brand_exclude": [
+                "AnyBrand-1"
+              ]
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-material-natural-001",
+    "input": "リネンのブラウス",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "素材 (filter) + カテゴリの絞り込み検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ブラウス リネン",
+            "filters": {
+              "material": "リネン"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-material-natural-002",
+    "input": "オーガニックコットンのポロシャツ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "素材 (filter) + サステナブル系 (is_a=eco_friendly 想定) + カテゴリの検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ポロシャツ オーガニックコットン",
+            "filters": {
+              "material": "オーガニックコットン"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-material-natural-003",
+    "input": "裏起毛のレギンス",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "機能 (capable_of=fleece_lined) + カテゴリの絞り込み検索。冬物として季節も補完。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "レギンス 裏起毛 暖かい",
+            "capable_of": [
+              "裏起毛",
+              "暖かい"
+            ],
+            "used_on": [
+              "冬"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-material-natural-004",
+    "input": "撥水加工のジャケット",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "機能 (capable_of=water_repellent) + カテゴリ。防水とは別の軽度撥水。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット 撥水",
+            "capable_of": [
+              "撥水"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-comparison-natural-001",
+    "input": "ユニクロみたいなシンプルなTシャツ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "実世界ブランド比較表現「ユニクロみたいな」+ スタイル + カテゴリ。LLMが「ベーシック・ミニマル」と分解、brandはfilterに入れずkeywords + is_aで補完。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "Tシャツ シンプル ベーシック ユニクロ",
+            "is_a": [
+              "ベーシック",
+              "ミニマル"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-comparison-natural-002",
+    "input": "プチプラのワンピース",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "価格帯表現「プチプラ」+ カテゴリ。filterで価格上限を設定。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ワンピース プチプラ",
+            "filters": {
+              "price_max": 5000
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-season-natural-001",
+    "input": "春物のブラウス",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "季節 (used_on=spring) + カテゴリの絞り込み検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ブラウス 春",
+            "used_on": [
+              "春"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-season-natural-002",
+    "input": "冬用の暖かいダウンジャケット",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "季節 + 機能 (capable_of=warm) + カテゴリの複合検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ダウンジャケット 冬 暖かい",
+            "used_on": [
+              "冬"
+            ],
+            "capable_of": [
+              "暖かい"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-event-natural-001",
+    "input": "結婚式二次会に着ていけるワンピース",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "イベント (used_for_event) + スタイル (is_a:semi_formal) + カテゴリ。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ワンピース 結婚式 二次会",
+            "used_for_event": [
+              "結婚式二次会"
+            ],
+            "is_a": [
+              "セミフォーマル"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-event-natural-002",
+    "input": "お花見に着ていくワンピース",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "イベント + 季節 + カテゴリの検索。春のカジュアル想定。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ワンピース お花見",
+            "used_for_event": [
+              "花見"
+            ],
+            "used_on": [
+              "春"
+            ],
+            "is_a": [
+              "カジュアル"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-style-natural-001",
+    "input": "韓国っぽいワンピース",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "スタイル参照 (is_a) + カテゴリの検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ワンピース 韓国 トレンド",
+            "is_a": [
+              "韓国風",
+              "トレンド"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-bodyshape-natural-001",
+    "input": "細く見えるシルエットのワイドパンツ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "見え方効果 (capable_of=slimming_effect) + シルエット + カテゴリの検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ワイドパンツ 細見え シルエット",
+            "capable_of": [
+              "着痩せ"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-multipurpose-natural-001",
+    "input": "アウトドアにも街着にも使えるジャケット",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "複数の場所 (used_in_loc) + カテゴリ。LLMがアウトドア+カジュアル両用と解釈。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット アウトドア カジュアル",
+            "used_in_loc": [
+              "アウトドア",
+              "カジュアル"
+            ],
+            "is_a": [
+              "万能"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-srp-size-only-001",
+    "input": "Mサイズある？",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"パーカー\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "SRP滞在中の「サイズある？」はサイズ絞り込み(検索条件追加)で product_search が必須。絞り込み結果が少数の場合に在庫を確認する check_inventory はUX上有用なため optional として許容する。設計ドキュメント 7.3 の UC1/UC2/UC5 三角境界ケース。PDPだとUC2、TOPだとUC14_NEEDS_CLARIFICATION寄り。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "パーカー",
+            "filters": {
+              "size": "M"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "<resolved>"
+          }
+        },
+        {
+          "name": "get_product_details",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-srp-multi-refine-001",
+    "input": "Sサイズの白いパーカーある？",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"パーカー\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "SRP滞在中の複合絞り込み(サイズ+色)。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "パーカー",
+            "filters": {
+              "size": "S",
+              "color": "ホワイト"
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-srp-price-range-001",
+    "input": "5000円〜1万円の範囲に絞って",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"スニーカー\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "SRP滞在中の価格範囲指定(min-max両方)。波ダッシュ「〜」を範囲として解釈。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー",
+            "filters": {
+              "price_min": 5000,
+              "price_max": 10000
+            }
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-srp-newest-001",
+    "input": "新着だけ見せて",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"ジャケット\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "SRP滞在中の新着フィルタ/ソート要求。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット",
+            "sort": "newest"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-brand-miss-001",
+    "input": "アディダスのスニーカー",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "DB未登録ブランド + カテゴリ。filterに入れず、keywordsと意味タグ(is_a/capable_of等)で類似スポーツスタイルとして検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー アディダス スポーツ",
+            "is_a": [
+              "スポーティ"
+            ],
+            "used_for_function": [
+              "スポーツ"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14SEARCH-brand-miss-002",
+    "input": "ユニクロのTシャツ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_SEARCH",
+      "confidence": null,
+      "reason": "DB未登録ブランド + カテゴリ。filterに入れず、keywordsとis_aでベーシック系スタイルとして検索。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "Tシャツ ユニクロ ベーシック",
+            "is_a": [
+              "ベーシック",
+              "ミニマル"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_search"
+  },
+  {
+    "scenario_id": "UC14NC-zero-natural-001",
+    "input": "おすすめある？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "抽出可能な条件ゼロ。ユーザー属性ベースのパーソナライズレコメンドAPIを呼ぶ。応答内で何を探しているかを聞き返す。",
+      "tools": [
+        {
+          "name": "recommend_api",
+          "args": {
+            "limit": 6
+          }
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-zero-natural-002",
+    "input": "いい感じのやつない？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "抽出可能な条件ゼロの曖昧要求。パーソナライズレコメンドで候補提示しつつ聞き返し。",
+      "tools": [
+        {
+          "name": "recommend_api",
+          "args": {
+            "limit": 6
+          }
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-zero-natural-003",
+    "input": "何買えばいい？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "完全な相談形式で条件ゼロ。レコメンドAPIで候補提示しつつ用途や好みを聞き返す。",
+      "tools": [
+        {
+          "name": "recommend_api",
+          "args": {
+            "limit": 6
+          }
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-zero-natural-004",
+    "input": "なんかない？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "極めて抽象的な要求で条件ゼロ。レコメンドAPIで候補提示+聞き返し。",
+      "tools": [
+        {
+          "name": "recommend_api",
+          "args": {
+            "limit": 6
+          }
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-gift-natural-001",
+    "input": "母の日のプレゼントにおすすめある？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "ギフト相談で対象「母」とイベント「母の日」抽出可能。カテゴリ未指定のためproduct_searchで関連商品を広く取得し、応答内でカテゴリを聞き返す。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "母の日 ギフト プレゼント",
+            "used_for_event": [
+              "母の日"
+            ],
+            "used_for_audience": [
+              "母"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-gift-natural-002",
+    "input": "彼女へのバレンタインギフトで悩んでる",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "ギフト相談で対象「彼女」とイベント「バレンタイン」抽出可能。カテゴリ未指定のためproduct_searchで関連商品を取得し、応答内でカテゴリ・予算を聞き返す。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "バレンタイン ギフト 彼女",
+            "used_for_event": [
+              "バレンタイン"
+            ],
+            "used_for_audience": [
+              "彼女"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-gift-natural-003",
+    "input": "父の日のプレゼント何がいい？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "ギフト相談で対象「父」とイベント「父の日」抽出可能。カテゴリ未指定のため関連商品を提示+聞き返し。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "父の日 ギフト",
+            "used_for_event": [
+              "父の日"
+            ],
+            "used_for_audience": [
+              "父"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-gift-natural-004",
+    "input": "祖母の誕生日に何贈ろう",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "ギフト相談で対象「祖母」とイベント「誕生日」抽出可能。カテゴリ未指定のためシニア向け商品を広く提示+聞き返し。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "誕生日 ギフト 祖母 シニア",
+            "used_for_event": [
+              "誕生日"
+            ],
+            "used_for_audience": [
+              "祖母",
+              "シニア"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-preference-natural-001",
+    "input": "サステナブルなファッションに興味ある",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "嗜好表明 (サステナブル=is_a:eco_friendly) のみで具体カテゴリ未指定。エコ系商品を広く提示+聞き返しでカテゴリを絞る。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "サステナブル エコ オーガニック",
+            "is_a": [
+              "エコ"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-preference-natural-002",
+    "input": "シンプルなのが好きなんだよね",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "スタイル嗜好 (is_a:minimalist) のみでカテゴリ未指定。ベーシック商品を広く提示+カテゴリ聞き返し。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "シンプル ベーシック ミニマル",
+            "is_a": [
+              "ミニマル",
+              "ベーシック"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-competitor-natural-001",
+    "input": "ZARA好きなんだよね",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "競合ブランド嗜好「ZARA好き」をLLMがスタイル属性 (is_a:trendy_casual) に分解。brandはfilterに入れずkeywordsと意味タグ(is_a/capable_of等)で類似商品を広く提示。応答内でカテゴリを聞き返す。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ZARA トレンド カジュアル ファストファッション",
+            "is_a": [
+              "トレンドカジュアル",
+              "トレンド"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-competitor-natural-002",
+    "input": "ユニクロの方が安くない？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "競合価格言及。ユニクロの低価格・ベーシックスタイル (is_a:basic) をLLMが属性化し、価格上限低めで類似商品を提示。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ユニクロ ベーシック 低価格",
+            "filters": {
+              "price_max": 5000
+            },
+            "is_a": [
+              "ベーシック",
+              "ミニマル"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-life-event-natural-001",
+    "input": "新社会人になるんだけど揃えるべき服って何？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "人生イベント「新社会人」での抽象相談。カテゴリ「服」のみ抽象。ビジネスカジュアル系 (is_a:business_casual) を広く提示+聞き返し。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "新社会人 ビジネス スーツ ジャケット シャツ",
+            "used_for_audience": [
+              "社会人",
+              "若者"
+            ],
+            "is_a": [
+              "ビジネスカジュアル",
+              "フォーマル"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-life-event-natural-002",
+    "input": "結婚するから服を新調したい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "人生イベント「結婚」での抽象相談。カテゴリ未特定のためフォーマル・セミフォーマル系を提示+聞き返し。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "結婚 フォーマル スーツ ドレス",
+            "used_for_event": [
+              "結婚式"
+            ],
+            "is_a": [
+              "フォーマル",
+              "上品"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-style-natural-001",
+    "input": "痩せて見えるコーデ教えてほしい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "スタイル相談で見え方効果 (capable_of=slimming) のみ。カテゴリ未指定のためスリミング系を広く提示+聞き返し。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "痩せ見え 細見え シルエット",
+            "capable_of": [
+              "着痩せ"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-style-natural-002",
+    "input": "夏フェスのコーデどうしよう",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "シーン (used_for_event=festival) + 季節 (used_on=summer) 抽出可能だがカテゴリ「コーデ」抽象。フェス向け商品を広く提示+聞き返し。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "夏フェス カジュアル トレンド",
+            "used_for_event": [
+              "フェス"
+            ],
+            "used_on": [
+              "夏"
+            ],
+            "is_a": [
+              "カジュアルトレンド"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC14NC-style-natural-003",
+    "input": "同窓会に着ていく服、何がいいかな？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC14_NEEDS_CLARIFICATION",
+      "confidence": null,
+      "reason": "シーン (used_for_event=reunion) 抽出可能だがカテゴリ「服」抽象。スマートカジュアル系を提示+カテゴリ聞き返し。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "同窓会 スマートカジュアル",
+            "used_for_event": [
+              "同窓会"
+            ],
+            "is_a": [
+              "スマートカジュアル"
+            ]
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc14_needs_clarification"
+  },
+  {
+    "scenario_id": "UC2-attribute-pronoun-001",
+    "input": "この靴は防水？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の代名詞「この靴」で閲覧商品を指す属性質問。商品詳細から防水性を確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-attribute-pronoun-002",
+    "input": "このシャツの素材は？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の代名詞「このシャツ」で閲覧商品を指す素材質問。商品詳細から素材情報を取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-attribute-short-001",
+    "input": "防水？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の極短入力。閲覧商品の防水属性を問う意図のため商品詳細を取得する。TOP/SRPではUC5に流れる文脈依存ケース。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-attribute-short-002",
+    "input": "素材",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の体言止め極短入力。閲覧商品の素材を問う意図のため商品詳細を取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-attribute-short-003",
+    "input": "重さ",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の体言止め極短入力。閲覧商品の重量スペックを問う意図のため商品詳細を取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-attribute-natural-001",
+    "input": "撥水加工ですか？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の機能属性質問。閲覧商品の撥水加工有無を商品詳細から確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-attribute-short-ctx-001",
+    "input": "防水？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-400\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "同一入力「防水？」だがPDP滞在のため閲覧商品の属性質問と確定。TOP=UC5/SRP=UC1と分岐する文脈依存ケース。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-400"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-size-natural-001",
+    "input": "サイズ感どう？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中のサイズ感質問。閲覧商品のサイズ展開を商品詳細で、フィット感の実評価をレビューで確認するため両ツールを呼ぶ。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        },
+        {
+          "name": "get_reviews",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-size-pronoun-001",
+    "input": "これのサイズ感どう？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の代名詞「これ」で閲覧商品を指すサイズ感質問。商品詳細を取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-size-short-001",
+    "input": "サイズ",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の体言止め極短入力。閲覧商品のサイズ展開を商品詳細で確認し、サイズ別在庫もcheck_inventoryで併せて確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        },
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-size-short-002",
+    "input": "サイズ感",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の体言止め極短入力。閲覧商品のフィット感を問う意図のため商品詳細を取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-size-natural-002",
+    "input": "大きめ？小さめ？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中のサイズ感質問。閲覧商品が大きめ/小さめかを商品詳細・レビューから確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-size-natural-003",
+    "input": "Mサイズある？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在のためSRP検索ではなく閲覧商品のMサイズ在庫確認。特定商品の在庫照会のためcheck_inventoryを呼ぶ。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-size-natural-ctx-001",
+    "input": "Mサイズある？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-200\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "同一入力でもPDP滞在のため閲覧商品のサイズ在庫確認と確定。SRP=UC1/TOP=UC5と分岐する文脈依存ケース。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-200"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-size-short-ctx-001",
+    "input": "Lある？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-500\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の極短入力。閲覧商品のLサイズ在庫をcheck_inventoryで、サイズ展開情報をget_product_detailsで確認する。SRP=UC1/TOP=UC5の文脈依存ケース。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-500"
+          }
+        },
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-500"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-stock-natural-001",
+    "input": "Lサイズの在庫ある？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中のサイズ指定在庫質問。閲覧商品のLサイズ在庫をcheck_inventoryで確認する。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-stock-natural-002",
+    "input": "在庫ある？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の在庫質問。閲覧商品の在庫有無をcheck_inventoryで確認する。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-stock-short-001",
+    "input": "在庫",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の体言止め極短入力。閲覧商品の在庫を問う意図のためcheck_inventoryを呼ぶ。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-stock-pronoun-001",
+    "input": "これまだ買える？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の代名詞「これ」での購入可否確認。閲覧商品の在庫をcheck_inventoryで確認する。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-stock-short-002",
+    "input": "売り切れ？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の在庫切れ確認。閲覧商品の在庫状況をcheck_inventoryで確認する。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-stock-natural-ctx-001",
+    "input": "在庫ある？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-700\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "同一入力でもPDP滞在のため閲覧商品の在庫確認と確定。SRP/TOPでは対象商品不明でUC5に流れる文脈依存ケース。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-700"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-review-natural-001",
+    "input": "レビューどう？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中のレビュー質問。閲覧商品のレビュー要約をget_reviewsで取得する。",
+      "tools": [
+        {
+          "name": "get_reviews",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-review-short-001",
+    "input": "評価は？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の評価質問。閲覧商品の評価点・レビューをget_reviewsで取得する。",
+      "tools": [
+        {
+          "name": "get_reviews",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-review-short-002",
+    "input": "評判",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の体言止め極短入力。閲覧商品の評判を問う意図のためget_reviewsを呼ぶ。",
+      "tools": [
+        {
+          "name": "get_reviews",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-review-natural-002",
+    "input": "みんなどう言ってる？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の口語的レビュー質問。閲覧商品のレビュー要約をget_reviewsで取得する。",
+      "tools": [
+        {
+          "name": "get_reviews",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-review-natural-003",
+    "input": "星いくつ？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の評価点質問。閲覧商品の平均評価をget_reviewsで取得する。",
+      "tools": [
+        {
+          "name": "get_reviews",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-variation-short-001",
+    "input": "色展開",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の体言止め極短入力。閲覧商品のカラーバリエーションを商品詳細から取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-variation-natural-001",
+    "input": "黒もある？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の特定カラー有無確認。閲覧商品のカラー展開を商品詳細で確認し、当該カラーの在庫もcheck_inventoryで確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        },
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-variation-natural-002",
+    "input": "白いのある？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在のためSRP検索ではなく閲覧商品の白カラー展開確認。商品詳細とカラー在庫(check_inventory)を併せて確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        },
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-variation-natural-ctx-001",
+    "input": "白いのある？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-300\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "同一入力でもPDP滞在のため閲覧商品のカラー展開確認。商品詳細とカラー在庫(check_inventory)を併せて確認する。SRP=UC1/TOP=UC5と分岐する文脈依存ケース。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-300"
+          }
+        },
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-300"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-care-natural-001",
+    "input": "洗濯機で洗える？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中のケア質問。閲覧商品の洗濯可否を商品詳細(素材・取扱表示)から確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-care-noun-001",
+    "input": "手入れ方法",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の体言止め入力。閲覧商品の手入れ方法を商品詳細から取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-care-natural-002",
+    "input": "アイロンかけられる？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中のケア質問。閲覧商品のアイロン可否を商品詳細(取扱表示)から確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-spec-natural-001",
+    "input": "丈は何センチ？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の寸法スペック質問。閲覧商品の丈寸法を商品詳細から取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-spec-short-001",
+    "input": "着丈",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の体言止め極短入力。閲覧商品の着丈寸法を商品詳細から取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-spec-pronoun-001",
+    "input": "このジャケットの裏地はついてる？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の代名詞「このジャケット」で閲覧商品を指すディテール質問。商品詳細から裏地有無を確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-price-short-001",
+    "input": "いくら？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の極短価格質問。閲覧商品の価格を商品詳細から取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-price-natural-001",
+    "input": "値段は？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の価格質問。閲覧商品の価格を商品詳細から取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-price-natural-002",
+    "input": "セール対象？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中のセール有無確認。閲覧商品の価格・セール状態(isOnSale)を商品詳細から確認する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-price-natural-ctx-001",
+    "input": "安いの？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-600\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "同一入力でもPDP滞在のため閲覧商品の価格妥当性質問と確定。SRP=UC1(価格絞り込み)/TOP=UC5と分岐する文脈依存ケース。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-600"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-multi-natural-001",
+    "input": "サイズ感と在庫教えて",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の複数項目質問。閲覧商品のサイズ感(商品詳細)と在庫(在庫API)を両方取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        },
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-multi-noun-001",
+    "input": "素材と洗濯方法",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-100\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "PDP滞在中の複数項目質問。素材・洗濯方法はいずれも商品詳細に含まれるため商品詳細を取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-srp-ordinal-001",
+    "input": "2番目のやつの在庫は？",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"スニーカー\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "SRP滞在中の序数参照「2番目」。srp_queryで検索結果を再現し、2番目の商品の在庫を確認する。新規検索(UC1)ではない。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "スニーカー"
+          }
+        },
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "<resolved>"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-srp-ordinal-002",
+    "input": "3番目のサイズ感教えて",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"ジャケット\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "SRP滞在中の序数参照「3番目」。srp_queryで検索結果を再現し、3番目の商品の詳細を取得する。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ジャケット"
+          }
+        },
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "<resolved>"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "check_inventory",
+          "args": {}
+        },
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-srp-ordinal-003",
+    "input": "1番目のレビューどう？",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"ワンピース\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "SRP滞在中の序数参照「1番目」。srp_queryで検索結果を再現し、1番目の商品のレビューを取得する。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "ワンピース"
+          }
+        },
+        {
+          "name": "get_reviews",
+          "args": {
+            "product_id": "<resolved>"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_product_details",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-srp-ordinal-004",
+    "input": "5番目のやつ詳細",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"バッグ\"}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "SRP滞在中の序数参照「5番目」。srp_queryで検索結果を再現し、5番目の商品の詳細・在庫・レビューを取得して総合的な「詳細」を提示する。",
+      "tools": [
+        {
+          "name": "product_search",
+          "args": {
+            "keywords": "バッグ"
+          }
+        },
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "<resolved>"
+          }
+        },
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "<resolved>"
+          }
+        },
+        {
+          "name": "get_reviews",
+          "args": {
+            "product_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-id-ref-noun-001",
+    "input": "prod-016 の詳細",
+    "context": "<context>\n{\"page_type\": \"TOP\", \"conversation_history\": [{\"role\": \"user\", \"content\": \"防水のトレッキングブーツ探してる\"}, {\"role\": \"assistant\", \"content\": \"防水仕様のトレッキングブーツ「prod-016」がおすすめです。\"}]}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "会話履歴でassistantがprod-016を提示済み。明示されたproduct_idで商品詳細を取得する。",
+      "tools": [
+        {
+          "name": "get_product_details",
+          "args": {
+            "product_id": "prod-016"
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_reviews",
+          "args": {}
+        },
+        {
+          "name": "check_inventory",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC2-id-ref-natural-001",
+    "input": "prod-100 の在庫教えて",
+    "context": "<context>\n{\"page_type\": \"TOP\", \"conversation_history\": [{\"role\": \"user\", \"content\": \"白いシャツのおすすめは？\"}, {\"role\": \"assistant\", \"content\": \"人気の白シャツなら「prod-100」がおすすめです。\"}]}\n</context>",
+    "expected": {
+      "intent": "UC2_PRODUCT_DETAIL",
+      "confidence": null,
+      "reason": "会話履歴でassistantがprod-100を提示済み。明示されたproduct_idで在庫を確認する。",
+      "tools": [
+        {
+          "name": "check_inventory",
+          "args": {
+            "product_id": "prod-100"
+          }
+        }
+      ]
+    },
+    "source": "uc2_product_detail"
+  },
+  {
+    "scenario_id": "UC3FAQ-return-1word-001",
+    "input": "返品",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "「返品」単語のみの極短入力。具体的な操作意図ではなくポリシー案内が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-return-policy-natural-001",
+    "input": "返品できる？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "返品可否を問う一般ポリシー質問のため、ツール呼び出しは不要でFAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-return-policy-natural-002",
+    "input": "返品したい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "返品は物理プロセスのためAPI完結せず、ポリシー案内・手続き説明が必要。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-return-policy-natural-003",
+    "input": "返品の手続きを教えて",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "返品手続きの案内を求める質問のため、FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-return-policy-pdp-001",
+    "input": "この商品返品できる？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "PDP滞在中だが、返品可否は商品詳細ではなく一般ポリシーへの質問のためFAQ扱い。UC2との境界ケース。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-return-policy-pdp-002",
+    "input": "これ返品OK？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-009\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "PDP滞在中の返品可否確認。商品固有の在庫・スペック質問ではなくポリシー質問のためFAQ扱い。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-return-negative-001",
+    "input": "返品できない場合ってある？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "返品不可となる条件を問う否定形のポリシー質問のため、FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-return-deadline-001",
+    "input": "返品の期限はいつまで？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "返品期限を問う一般ポリシー質問のため、FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-shipping-1word-001",
+    "input": "送料",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "「送料」単語のみの極短入力。送料ポリシー案内が適切。kNNではUC5に流れやすい既知の境界ケース。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-shipping-policy-natural-001",
+    "input": "送料はいくらかかる？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "送料の一般ポリシー質問のため、FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-shipping-policy-natural-002",
+    "input": "注文してからどれくらいで届く？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "配送日数の一般ポリシー質問。特定注文の配送状況ではなく、一般的な期間案内のためFAQ扱い。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-shipping-policy-natural-003",
+    "input": "送料無料の条件は？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "送料無料の適用条件を問う一般ポリシー質問のため、FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-shipping-policy-short-001",
+    "input": "送料は？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "送料に関する極短のポリシー質問。FAQ応答で対応。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-payment-policy-natural-001",
+    "input": "支払い方法は何が使える？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "利用可能な決済手段を問う一般ポリシー質問のため、FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-payment-policy-natural-002",
+    "input": "分割払いってできる？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "分割払いの可否を問うポリシー質問。FAQ応答で対応。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-exchange-policy-natural-001",
+    "input": "サイズ交換できる？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "サイズ交換の可否を問う一般ポリシー質問。物理プロセスのためFAQ案内が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-exchange-policy-natural-002",
+    "input": "色違いに交換したい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "色違い交換の希望表明だが、交換も物理プロセスのためポリシー案内。FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-exchange-policy-pdp-001",
+    "input": "これサイズ交換できる？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-008\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "PDP滞在中のサイズ交換可否確認。商品スペックではなくポリシー質問のためFAQ扱い。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-coupon-1word-001",
+    "input": "クーポン",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "「クーポン」単語のみの極短入力。クーポン利用ポリシーの案内が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-points-policy-natural-001",
+    "input": "ポイントの有効期限はいつまで？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "ポイントの有効期限に関する一般ポリシー質問のため、FAQ応答が適切。個別ユーザーのポイント残高ではない。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-coupon-policy-natural-001",
+    "input": "クーポンって併用できる？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "クーポン併用ルールに関するポリシー質問のため、FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-cancel-1word-001",
+    "input": "キャンセル",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "「キャンセル」単語のみの極短入力。具体的な操作意図(\"したい\")がないため、ポリシー案内が適切。UC3_ORDER_ACTIONとの境界ケース。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-cancel-policy-natural-001",
+    "input": "キャンセルできる？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "「できる？」形式のキャンセル可否確認はポリシー質問扱い。実際のキャンセル操作意図ではないためFAQ応答。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-cancel-policy-natural-002",
+    "input": "注文のキャンセルって可能？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "「可能？」形式のキャンセル可否確認はポリシー質問扱い。FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3FAQ-gift-policy-natural-001",
+    "input": "ギフト包装できる？",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-005\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "ギフト包装の可否を問う一般ポリシー質問のため、FAQ応答が適切。",
+      "tools": []
+    },
+    "source": "uc3_faq"
+  },
+  {
+    "scenario_id": "UC3OQ-shipping-natural-001",
+    "input": "配送状況教えて",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "配送状況の照会。まず list_orders で注文を特定するのが必須。list_orders の結果に状態が含まれるため get_order_status の追加呼び出しは optional(より詳細な追跡が必要な場合に呼ぶ)。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_order_status",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-shipping-natural-002",
+    "input": "注文した商品はいつ届く？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "配送状況の照会。まず list_orders で注文を特定するのが必須。list_orders の結果に状態が含まれるため get_order_status の追加呼び出しは optional(より詳細な追跡が必要な場合に呼ぶ)。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_order_status",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-shipping-natural-003",
+    "input": "届くのいつ？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "配送状況の照会。まず list_orders で注文を特定するのが必須。list_orders の結果に状態が含まれるため get_order_status の追加呼び出しは optional(より詳細な追跡が必要な場合に呼ぶ)。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_order_status",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-shipping-short-001",
+    "input": "いつ届く？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "配送状況の照会。まず list_orders で注文を特定するのが必須。list_orders の結果に状態が含まれるため get_order_status の追加呼び出しは optional(より詳細な追跡が必要な場合に呼ぶ)。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_order_status",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-shipping-time-ref-001",
+    "input": "先週の注文はどうなった？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "配送状況の照会。まず list_orders で注文を特定するのが必須。list_orders の結果に状態が含まれるため get_order_status の追加呼び出しは optional(より詳細な追跡が必要な場合に呼ぶ)。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_order_status",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-shipping-1word-001",
+    "input": "配送状況",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "配送状況の照会。まず list_orders で注文を特定するのが必須。list_orders の結果に状態が含まれるため get_order_status の追加呼び出しは optional(より詳細な追跡が必要な場合に呼ぶ)。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "get_order_status",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-history-natural-001",
+    "input": "注文履歴を見たい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "注文履歴の閲覧要求のため、注文一覧を取得する。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 20
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-history-natural-002",
+    "input": "過去の注文一覧",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "過去の注文一覧表示要求のため、注文一覧を取得する。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 20
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-history-time-ref-001",
+    "input": "去年の注文って残ってる？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "時間参照「去年」付きの注文有無確認のため、年単位で注文一覧を絞り込む。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "date_range": "last_year"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-detail-id-001",
+    "input": "注文番号#1234の詳細を確認したい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "注文ID明示の詳細照会のため、order_id指定で注文詳細を取得する。",
+      "tools": [
+        {
+          "name": "get_order_details",
+          "args": {
+            "order_id": "1234"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-detail-pronoun-001",
+    "input": "あの注文の詳細見せて",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "代名詞「あの」での参照解決が必要。直近注文を一覧から特定して詳細を取得する。order_id解決不可ならUC5フォールバック対象。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        },
+        {
+          "name": "get_order_details",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-points-natural-001",
+    "input": "ポイント残高はいくら？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "ユーザー自身のポイント残高確認のため、ポイント残高取得APIを呼ぶ。一般ポリシー(有効期限等)ではない点でUC3_FAQと区別。",
+      "tools": [
+        {
+          "name": "get_point_balance",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-points-natural-002",
+    "input": "私のポイントは？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "「私の」明示でユーザー固有のポイント残高確認。ポイント残高取得APIを呼ぶ。",
+      "tools": [
+        {
+          "name": "get_point_balance",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-points-natural-003",
+    "input": "ポイント貯まってる？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_QUERY",
+      "confidence": null,
+      "reason": "ユーザー自身のポイント蓄積状況確認のため、ポイント残高取得APIを呼ぶ。",
+      "tools": [
+        {
+          "name": "get_point_balance",
+          "args": {}
+        }
+      ]
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-coupon-natural-001",
+    "input": "持ってるクーポン教えて",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "当サービスはクーポン制度を提供していないため、保有クーポンの照会はできない。クーポン非対応である旨をFAQとして案内する。ツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OQ-coupon-natural-002",
+    "input": "利用可能なクーポンある？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_FAQ",
+      "confidence": null,
+      "reason": "当サービスはクーポン制度を提供していないため、利用可能クーポンの確認はできない。クーポン非対応である旨をFAQとして案内する。ツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc3_order_query"
+  },
+  {
+    "scenario_id": "UC3OA-cancel-natural-001",
+    "input": "キャンセルしたい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定のキャンセル操作。まず list_orders で注文を特定するのが必須。対象と情報が揃えば cancel_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため cancel_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "cancel_order",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-cancel-imperative-001",
+    "input": "キャンセルして",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定のキャンセル操作。まず list_orders で注文を特定するのが必須。対象と情報が揃えば cancel_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため cancel_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "cancel_order",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-cancel-pronoun-001",
+    "input": "これキャンセル",
+    "context": "<context>\n{\"page_type\": \"TOP\", \"conversation_history\": [{\"role\": \"user\", \"content\": \"最近の注文一覧見せて\"}, {\"role\": \"assistant\", \"content\": \"直近のご注文は以下の3件です: #1234 (配送中)、#1230 (発送準備中)、#1225 (お届け済み)\"}]}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "代名詞「これ」は直前の会話履歴で提示された注文一覧を指す。文脈から先頭の#1234をキャンセル対象として解決。",
+      "tools": [
+        {
+          "name": "cancel_order",
+          "args": {
+            "order_id": "1234"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-cancel-time-ref-001",
+    "input": "先週の注文キャンセルしたい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定のキャンセル操作。まず list_orders で注文を特定するのが必須。対象と情報が揃えば cancel_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため cancel_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "cancel_order",
+          "args": {
+            "order_id": "<resolved>"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-cancel-id-001",
+    "input": "注文番号#1234をキャンセル",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "注文ID明示のキャンセル要求のため、order_id指定で直接キャンセル実行。",
+      "tools": [
+        {
+          "name": "cancel_order",
+          "args": {
+            "order_id": "1234"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-cancel-1word-001",
+    "input": "キャンセル",
+    "context": "<context>\n{\"page_type\": \"TOP\", \"conversation_history\": [{\"role\": \"user\", \"content\": \"先週注文した商品なんだけど\"}, {\"role\": \"assistant\", \"content\": \"先週ご注文の#1234ですね。配送中です。どうされましたか？\"}]}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "「キャンセル」単語のみだが、会話履歴で特定注文(#1234)を話題にしているため操作意図のキャンセル要求と判定。文脈なしでは UC3_FAQ になるが履歴ありで UC3_ORDER_ACTION に分類されることを検証。",
+      "tools": [
+        {
+          "name": "cancel_order",
+          "args": {
+            "order_id": "1234"
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-address-natural-001",
+    "input": "配送先を変更したい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定の変更操作。まず list_orders で注文を特定するのが必須。対象と変更内容の情報が揃えば modify_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため modify_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "modify_order",
+          "args": {
+            "order_id": "<resolved>",
+            "changes": {
+              "shipping_address": "<new_address>"
+            }
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-address-imperative-001",
+    "input": "住所を変えて",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定の変更操作。まず list_orders で注文を特定するのが必須。対象と変更内容の情報が揃えば modify_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため modify_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "modify_order",
+          "args": {
+            "order_id": "<resolved>",
+            "changes": {
+              "shipping_address": "<new_address>"
+            }
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-address-keyword-001",
+    "input": "お届け先変更",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定の変更操作。まず list_orders で注文を特定するのが必須。対象と変更内容の情報が揃えば modify_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため modify_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "modify_order",
+          "args": {
+            "order_id": "<resolved>",
+            "changes": {
+              "shipping_address": "<new_address>"
+            }
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-delivery-date-natural-001",
+    "input": "お届け日を変更したい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定の変更操作。まず list_orders で注文を特定するのが必須。対象と変更内容の情報が揃えば modify_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため modify_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "modify_order",
+          "args": {
+            "order_id": "<resolved>",
+            "changes": {
+              "delivery_date": "<new_date>"
+            }
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-delivery-date-specific-001",
+    "input": "明日に届くように変更して",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定の変更操作。まず list_orders で注文を特定するのが必須。対象と変更内容の情報が揃えば modify_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため modify_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "modify_order",
+          "args": {
+            "order_id": "<resolved>",
+            "changes": {
+              "delivery_date": "tomorrow"
+            }
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-quantity-natural-001",
+    "input": "注文数を変更したい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定の変更操作。まず list_orders で注文を特定するのが必須。対象と変更内容の情報が揃えば modify_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため modify_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "modify_order",
+          "args": {
+            "order_id": "<resolved>",
+            "changes": {
+              "quantity": "<new_qty>"
+            }
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-quantity-add-001",
+    "input": "あともう一個注文して",
+    "context": "<context>\n{\"page_type\": \"TOP\", \"conversation_history\": [{\"role\": \"user\", \"content\": \"昨日注文した商品の状況見せて\"}, {\"role\": \"assistant\", \"content\": \"昨日のご注文 #1240 (リネンブラウス × 1点、配送準備中) です。\"}]}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "会話履歴で特定済みの注文(#1240、数量1)に対して数量を1増やす操作。「あと」の表現が既存注文への追加であることを示す。",
+      "tools": [
+        {
+          "name": "modify_order",
+          "args": {
+            "order_id": "1240",
+            "changes": {
+              "quantity": 2
+            }
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC3OA-gift-natural-001",
+    "input": "ギフト包装に変更したい",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC3_ORDER_ACTION",
+      "confidence": null,
+      "reason": "対象注文が未特定の変更操作。まず list_orders で注文を特定するのが必須。対象と変更内容の情報が揃えば modify_order を実行するが、情報不足時はユーザー確認に留めるのも妥当なため modify_order は optional とする。",
+      "tools": [
+        {
+          "name": "list_orders",
+          "args": {
+            "limit": 5
+          }
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "modify_order",
+          "args": {
+            "order_id": "<resolved>",
+            "changes": {
+              "gift_wrap": true
+            }
+          }
+        }
+      ]
+    },
+    "source": "uc3_order_action"
+  },
+  {
+    "scenario_id": "UC5-greeting-natural-001",
+    "input": "こんにちは",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "購買意図のない一般的な挨拶のため、ツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-greeting-natural-002",
+    "input": "おはようございます",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "購買意図のない朝の挨拶のため、ツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-greeting-natural-003",
+    "input": "ありがとうございました",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "対話終了時の感謝表現で、検索・操作意図を含まないためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-greeting-short-001",
+    "input": "どうも",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "極短の挨拶発話で、検索・操作意図がないためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-greeting-short-002",
+    "input": "やあ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "極短のカジュアル挨拶で、購買意図を含まないためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-greeting-short-003",
+    "input": "お疲れ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "極短のねぎらい表現で、検索・操作意図がないためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-greeting-natural-srp-001",
+    "input": "こんにちは",
+    "context": "<context>\n{\"page_type\": \"SRP\", \"srp_query\": \"スニーカー\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "SRP滞在中だが、発話自体は挨拶であり検索の追加条件ではないためUC5扱い。ページコンテキスト非依存性のテスト。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-greeting-natural-pdp-001",
+    "input": "こんにちは",
+    "context": "<context>\n{\"page_type\": \"PDP\", \"viewing_product_id\": \"prod-016\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "PDP滞在中だが、発話自体は挨拶であり商品詳細の質問ではないためUC5扱い。ページコンテキスト非依存性のテスト。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-capability-natural-001",
+    "input": "何ができるの？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "エージェント自身の機能を問う capability 質問。商品検索や注文操作に該当しないためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-capability-natural-002",
+    "input": "どんなことを手伝ってくれる？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "エージェントの機能範囲を尋ねる capability 質問のため、ツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-capability-natural-003",
+    "input": "あなたは何をしてくれるの？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "エージェントの提供価値を確認する capability 質問のため、ツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-out-of-scope-natural-001",
+    "input": "今日の天気は？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "ショッピングと無関係な天気の質問のため、対象外として扱いツール呼び出しはしない。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-out-of-scope-natural-002",
+    "input": "面白い話して",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "雑談要求であり、商品検索・注文・FAQいずれにも該当しないためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-out-of-scope-natural-003",
+    "input": "ニュース教えて",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "ショッピングドメイン外の情報要求のため、対象外として扱う。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-meta-natural-001",
+    "input": "AIなの？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "エージェント自身の正体を問うメタ質問のため、ツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-meta-natural-002",
+    "input": "人間？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "エージェントが人間か否かを問うメタ質問のため、ツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-inappropriate-natural-001",
+    "input": "個人情報教えて",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "他者の個人情報要求は購買と無関係であり、応じるべきでない要求。ツール呼び出しは行わない。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-inappropriate-natural-002",
+    "input": "あなたの開発元はどこ？",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "エージェントの内部実装に関する質問で、ショッピングと無関係なためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-departure-natural-001",
+    "input": "他で買うわ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "離脱宣言。検索・注文意図はなくツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-departure-short-001",
+    "input": "もういいや",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "極短の離脱宣言。検索・操作意図がないためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-resume-natural-001",
+    "input": "さっきの続き",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "セッション復帰要求。具体的な検索条件・参照対象がないため、ツール呼び出しではなく聞き返しが適切。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-resume-natural-002",
+    "input": "前回の話だけど",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "過去セッション参照の前置き発話で、具体的な質問内容を含まないためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-anomaly-gibberish-001",
+    "input": "ああああ",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "意味不明な入力で、検索・操作意図を抽出できないためツール呼び出し不要。聞き返しが適切。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  },
+  {
+    "scenario_id": "UC5-anomaly-emoji-001",
+    "input": "😊👍",
+    "context": "<context>\n{\"page_type\": \"TOP\"}\n</context>",
+    "expected": {
+      "intent": "UC5_OTHER",
+      "confidence": null,
+      "reason": "絵文字のみの入力で、具体的な検索・操作意図がないためツール呼び出し不要。",
+      "tools": []
+    },
+    "source": "uc5_other"
+  }
+]
