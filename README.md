@@ -18,7 +18,7 @@ The full contract (7 intents, 13 tools, the JSON schema) is in `dataset/`.
 
 ## Method
 
-- **Dataset**: 200 scenarios in `dataset/scenarios.json`, each with an expected intent and an expected tool set (plus an optional-tool allowance). Queries are short shopping utterances; contexts are page metadata (`page_type`, `viewing_product_id`). No personal data.
+- **Dataset**: 200 scenarios in `dataset/scenarios.json`, each with an expected intent and an expected tool set (plus an optional-tool allowance). Queries are short shopping utterances; contexts are page metadata (`page_type`, `viewing_product_id`). No personal data. How the dataset was built, and why defining correct behavior is the hard part, is written up in [`dataset/how-it-was-built.md`](dataset/how-it-was-built.md).
 - **Prompt**: one system prompt for every model, `dataset/system_prompt.txt`.
 - **Grading** (`bench/harness.py`, identical across backends):
   - `intent_correct` — intent equals the expected label
@@ -74,9 +74,10 @@ Bedrock access uses your AWS credentials. Luna needs the `bedrock-mantle` endpoi
 
 ```
 dataset/
-  scenarios.json       200 scenarios (id, input, context, expected intent + tools)
-  system_prompt.txt    the one system prompt every model is given
-  schema.json          extraction JSON schema (7 intents, 13 tool names)
+  scenarios.json         200 scenarios (id, input, context, expected intent + tools)
+  system_prompt.txt      the one system prompt every model is given
+  schema.json            extraction JSON schema (7 intents, 13 tool names)
+  how-it-was-built.md    how the dataset was built and why defining "correct" is the hard part
 bench/
   harness.py           load / build message / normalize / grade (stdlib only)
   bench_bedrock.py     Nova Micro / Nova 2 Lite / Haiku 4.5, over Converse
