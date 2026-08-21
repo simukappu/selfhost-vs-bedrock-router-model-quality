@@ -1,12 +1,12 @@
-# Self-hosted vs Bedrock — Front-Stage Quality
+# Self-hosted vs Bedrock — Router-Model Quality
 
-Measured quality and latency of a self-hosted Qwen3.5-4B against managed Bedrock models (Nova Micro, Nova 2 Lite, Claude Haiku 4.5, GPT-5.6 Luna) on an agent's **one-shot front-stage extraction** task, over one shared 200-scenario dataset and one grading rule.
+Measured quality and latency of a self-hosted Qwen3.5-4B against managed Bedrock models (Nova Micro, Nova 2 Lite, Claude Haiku 4.5, GPT-5.6 Luna) on an agent's **router model**: the one-shot stage that classifies intent, plans which tools to call, and extracts their arguments. One shared 200-scenario dataset, one grading rule.
 
 Companion to [selfhost-vs-bedrock-token-economics](https://github.com/oktomoya/selfhost-vs-bedrock-token-economics), which measures the **cost** of moving tokens. This repo measures whether a small model is **accurate and fast enough** for the role. The two axes are separate on purpose: a model can be the cheapest and still not do the job, so cost is not mixed in here.
 
 ## The task
 
-A shopping agent puts one small LLM call in front of every request. It reads the user's query plus a little page context and emits a single JSON object: an intent label (7 classes) and the list of tools to call (13 names), with their arguments. Because every request crosses it, this "front stage" has to be small, cheap, and fast. The question here is which model does that job well.
+A shopping agent puts one small LLM call, the router model, in front of every request. It reads the user's query plus a little page context and emits a single JSON object: an intent label (7 classes) and the list of tools to call (13 names), with their arguments. In one shot it classifies intent, decides which tools to call, and fills in their arguments. Because every request crosses it, the router model has to be small, cheap, and fast. The question here is which model does that job well.
 
 ```
 input:  {"page_type": "PDP", "viewing_product_id": "..."}  +  "この靴のサイズ感は？"
@@ -45,7 +45,7 @@ What the numbers say, and only that:
 
 - **The self-hosted small model clears the cheapest managed models on quality.** Qwen3.5-4B lands intent +4.5 to +6.0 points and tools set-match +11.5 to +14.0 points above Nova Micro and Nova 2 Lite. It sits just under Haiku 4.5 and Luna.
 - **Haiku 4.5 and Luna are effectively tied at the top**, within a point or two of each other. Do not read Luna as "most accurate" from one run (see variance below).
-- **Latency and quality point in opposite directions.** Nova Micro is fastest and least accurate; the more accurate models are slower. Whether the front stage can afford a given model's latency depends on the system's end-to-end budget, not on quality alone.
+- **Latency and quality point in opposite directions.** Nova Micro is fastest and least accurate; the more accurate models are slower. Whether the router model can afford a given model's latency depends on the system's end-to-end budget, not on quality alone.
 
 ## Read this before quoting the numbers
 
@@ -91,7 +91,7 @@ results/
 
 ## Attribution
 
-The task, the dataset, the prompt, and the tool schema come from Tomoya Okuno's ([oktomoya](https://github.com/oktomoya)) Architecture Dojo 2026 verification of an AI shopping assistant at AWS Summit Japan (the [session deck](https://pages.awscloud.com/rs/112-TZM-766/images/R01-03_0626_ARC446_v2.pdf) is in Japanese). This repository is the front-stage quality and latency slice of that work, packaged to be reproducible. The measurement scripts and this write-up are by Shota Yamazaki ([simukappu](https://github.com/simukappu)). Any errors in the repackaging are mine.
+The task, the dataset, the prompt, and the tool schema come from Tomoya Okuno's ([oktomoya](https://github.com/oktomoya)) Architecture Dojo 2026 verification of an AI shopping assistant at AWS Summit Japan (the [session deck](https://pages.awscloud.com/rs/112-TZM-766/images/R01-03_0626_ARC446_v2.pdf) is in Japanese). This repository is the router-model quality and latency slice of that work, packaged to be reproducible. The measurement scripts and this write-up are by Shota Yamazaki ([simukappu](https://github.com/simukappu)). Any errors in the repackaging are mine.
 
 ## Dependencies
 
